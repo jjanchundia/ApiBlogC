@@ -46,7 +46,8 @@ namespace BlogC
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            app.UseCors(o=> {
+            app.UseCors(o=> {            
+                o.WithOrigins("https://blog-nuevos.vercel.app");
                 o.WithOrigins("http://localhost:4200");
                 o.AllowAnyMethod();
                 o.AllowAnyHeader();
@@ -56,14 +57,16 @@ namespace BlogC
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseSwagger();
-                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BlogC v1"));
+                //Para entorno de desarrollo
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BlogC v1"));
             }
 
-            app.UseRouting();
-
+            //Para entorno publicado
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BlogC v1"));
+
+            app.UseRouting();
 
             app.UseAuthorization();
 

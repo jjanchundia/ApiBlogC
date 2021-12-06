@@ -22,11 +22,13 @@ namespace BlogC.Data.Repository
             _context = context;
             dbSet = _context.Set<T>();
         }
-
+        
+        //Api Key de Firebase
         private readonly string ApiKey = "AIzaSyDmTwaJUqDzJb2_a_WOhbrsszN_XJEGmzQ";
         private readonly string Bucket = "contenedornetcoreimages.appspot.com";
-        private readonly string AuthEmail = "jjanchundia92@gmail.com";
-        private readonly string AuthPassword = "Ms2010adkp4100";
+        //Correo con el cual se creo storage de Firebase
+        private readonly string AuthEmail = "TuCorreoDondeRegistrasFirebase";
+        private readonly string AuthPassword = "TuContraseña";
 
         public StreamContent ConvertBase64ToStream(string image)
         {

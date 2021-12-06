@@ -1,16 +1,11 @@
 ﻿using BlogC.Data;
 using BlogC.Data.Interfaz;
 using BlogC.Data.Models;
-using BlogC.Data.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using System.Linq;
-
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace BlogC.Controllers
 {

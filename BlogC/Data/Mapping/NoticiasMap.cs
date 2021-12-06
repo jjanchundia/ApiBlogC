@@ -14,15 +14,13 @@ namespace BlogC.Data.Mapping
 
             builder.Property(x => x.Titulo)
                 .HasColumnType("varchar(50)");
-            //builder.Property(x => x.Content)
-            //    .HasColumnType("varchar(MAX)");
-            //builder.Property(x => x.Imagen)
-            //    .HasColumnType("varchar(MAX)");
-            //builder.Property(x => x.Description)
-            //    .HasColumnType("varchar(MAX)");
-            //builder.Property(x => x.Url)
-            //    .HasColumnType("varchar(MAX)");
-            //builder.Property(x => x.Foto)
+            builder.Property(x => x.Content)
+                .HasColumnType("varchar(MAX)");
+            builder.Property(x => x.Imagen)
+                .HasColumnType("varchar(MAX)");
+            builder.Property(x => x.Description)
+                .HasColumnType("varchar(MAX)");
+            builder.Property(x => x.Url);
             //    .HasColumnType("varchar(MAX)");
             //builder.Property(x => x.FechaCreacion)
             //    .HasColumnType("DateTime");

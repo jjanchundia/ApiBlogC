@@ -1,10 +1,7 @@
 ﻿using BlogC.Data;
 using BlogC.Data.Interfaz;
-using BlogC.Data.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,31 +22,20 @@ namespace BlogC.Controllers
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            //var noticiaRepository = new NoticiasRepository(_context);
             return Ok(await _context2.Listar());
         }
 
         [HttpGet("GetPorId")]
         public async Task<IActionResult> GetPorId(Guid id)
         {
-            //var noticiaRepository = new NoticiasRepository(_context);
             return Ok(await _context2.ObtenerPorId(id));
         }
 
         [HttpGet("IniciarSesion={correo}/{password}")]
-        public IActionResult IniciarSesion(string correo, string password)//UsuarioModels model)
+        public IActionResult IniciarSesion(string correo, string password)
         {
-            //var noticiaRepository = new NoticiasRepository(_context);
-            //_context.
             var usuario = _context.Usuario.Where(x => x.Correo == correo && x.Password == password);
-            if (usuario.Count() > 0)
-            {
-                return Ok(usuario.FirstOrDefault());
-            }
-            else
-            { 
-                return Ok(usuario.FirstOrDefault());
-            }
+            return Ok(usuario.FirstOrDefault());
         }
 
         //[HttpPost("Crear")]
